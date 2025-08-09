@@ -2,10 +2,21 @@ import type { Route } from "./+types/home";
 import Navbar from "~/components/Navbar";
 import {resumes} from "../../constants";
 import ResumeCard from "~/components/ResumeCard";
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router";
+import { usePuterStore } from "~/lib/puter";
 
 
 
 export function meta({}: Route.MetaArgs) {
+    const { isLoading, auth } = usePuterStore();
+    const location = useLocation();
+    
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(!auth.isAuthenticated) navigate('/auth?next=/');
+    }, [auth.isAuthenticated]);
   return [
     { title: "ATS Software" },
     { name: "description", content: "Smart feedback for your dream job" },
@@ -15,12 +26,14 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return <main>
     <Navbar/>
+     
+
     <section className="main-section">
-      <div className={"page-heading"}>
+      <div className={"page-heading py-16"}>
         <h1>Track your Applications & Resume Ratings</h1>
         <h2>Review your submissions and check AI-powered feedback.</h2>
       </div>
-    </section>
+    
 
     {resumes.length > 0 && (
     <div className="resumes-section">
@@ -31,6 +44,7 @@ export default function Home() {
       ))}
     </div>
     )}
+    </section>
   </main>
 
 
