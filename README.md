@@ -1,87 +1,74 @@
-# Welcome to React Router!
 
-A modern, production-ready template for building full-stack React applications using React Router.
+# AI Resume Analyzer
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+A modern web application for analyzing resumes and providing smart, AI-powered feedback for job applications. Built with React, Vite, and TypeScript.
 
 ## Features
+- Upload your resume (PDF)
+- Get instant ATS (Applicant Tracking System) feedback
+- Receive suggestions for improvement
+- Track your resume submissions and ratings
+- Secure authentication
+- Beautiful, responsive UI
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## Tech Stack
+- React
+- Vite
+- TypeScript
+- Zustand (state management)
+- Tailwind CSS
+- PDF.js (optional, for PDF preview)
+- Puter API (file storage, AI feedback)
 
 ## Getting Started
 
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm or yarn
+
 ### Installation
-
-Install the dependencies:
-
 ```bash
 npm install
 ```
 
-### Development
-
-Start the development server with HMR:
-
+### Running the App
 ```bash
 npm run dev
 ```
+Visit [http://localhost:5173](http://localhost:5173) in your browser.
 
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
+### Build for Production
 ```bash
 npm run build
 ```
 
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+## Project Structure
+```
+app/
+	components/      # Reusable React components
+	routes/          # Route components (pages)
+	lib/             # Utility libraries (API, PDF, etc.)
+constants/         # App-wide constants
+public/            # Static assets (images, icons, etc.)
+types/             # TypeScript type definitions
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+## Usage
+1. Sign up or log in.
+2. Upload your resume and job details.
+3. View feedback and suggestions.
+4. Track your submissions on the home page.
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+## Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-### DIY Deployment
+## License
+MIT
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+## Credits
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Zustand](https://zustand-demo.pmnd.rs/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [PDF.js](https://mozilla.github.io/pdf.js/)
+- [Puter API](https://puter.com/)
